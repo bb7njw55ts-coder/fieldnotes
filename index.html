@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Field Notes by Praveen.B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Literata:ital,wght@0,400;0,500;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EFE9DD;
+    --paper-raised: #E6DFCF;
+    --ink: #24221C;
+    --ink-soft: #55503F;
+    --line: #C9BFA9;
+    --moss: #4B5A3F;
+    --rust: #A2553B;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1C1A15;
+      --paper-raised: #242119;
+      --ink: #EDE7D9;
+      --ink-soft: #B3AB94;
+      --line: #3D3829;
+      --moss: #8FA579;
+      --rust: #D18367;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1C1A15;
+    --paper-raised: #242119;
+    --ink: #EDE7D9;
+    --ink-soft: #B3AB94;
+    --line: #3D3829;
+    --moss: #8FA579;
+    --rust: #D18367;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Literata', Georgia, serif;
+    line-height: 1.6;
+    min-height: 100%;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  header.site { margin-bottom: 3rem; }
+  .site-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .byline {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--ink-soft);
+  }
+  .site-tag {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    max-width: 46ch;
+  }
+
+  nav.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    margin: 2rem 0 2.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.8rem 0;
+  }
+  nav.filters button {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 0.92rem;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    padding: 0.15rem 0.3rem;
+  }
+  nav.filters button.active {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rust);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .entry {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .entry:last-child { border-bottom: none; }
+  .entry-meta {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+  .entry-meta .tag { color: var(--moss); }
+  .entry-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    line-height: 1.25;
+  }
+  .entry-title a { color: var(--ink); text-decoration: none; }
+  .entry-title a:hover { color: var(--rust); }
+  .entry-excerpt { color: var(--ink-soft); font-size: 0.98rem; }
+  .entry.poetry .entry-excerpt {
+    font-style: italic;
+    white-space: pre-line;
+  }
+
+  footer.site {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 480px) {
+    .site-name { font-size: 2.1rem; }
+    .wrap { padding: 2.2rem 1.2rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <p class="site-name">Field Notes <span class="byline">by Praveen.B</span></p>
+    <p class="site-tag">Life, philosophy, stories, poems, and opinions — written down as they occur to me.</p>
+  </header>
+
+  <nav class="filters" id="filters">
+    <button class="active" data-tag="all">All</button>
+    <button data-tag="life">Life</button>
+    <button data-tag="philosophy">Philosophy</button>
+    <button data-tag="stories">Stories</button>
+    <button data-tag="poetry">Poetry</button>
+    <button data-tag="opinions">Opinions</button>
+  </nav>
+
+  <main id="entries">
+
+    <article class="entry" data-tag="philosophy">
+      <div class="entry-meta"><span class="tag">Philosophy</span></div>
+      <h2 class="entry-title"><a href="#">Safar Ka Kabhi Anth Nahi Hota</a></h2>
+      <p class="entry-excerpt">Safar ka kabhi anth nahi hota, bas ek naya mod aa jaata hai.</p>
+    </article>
+
+    <article class="entry" data-tag="philosophy">
+      <div class="entry-meta"><span class="tag">Philosophy</span></div>
+      <h2 class="entry-title"><a href="#">Misfits</a></h2>
+      <p class="entry-excerpt">In every generation, a few people see the world differently.
+Most are ignored.
+A few are resisted.
+And a rare few quietly change how the rest of us live.
+
+The ones who found meaning in scattered stars.
+The ones who traced a path from ape to man.
+The ones who imagined a war without weapons.
+
+They exist in a space the world has yet to learn how to judge.</p>
+    </article>
+
+    <article class="entry" data-tag="philosophy">
+      <div class="entry-meta"><span class="tag">Philosophy</span></div>
+      <h2 class="entry-title"><a href="#">To Find an Island, You Must First Find a Boat</a></h2>
+      <p class="entry-excerpt">To find an island, you must first find a boat.</p>
+    </article>
+
+    <article class="entry" data-tag="life">
+      <div class="entry-meta"><span class="tag">Life</span> · Sample entry</div>
+      <h2 class="entry-title"><a href="#">A Morning That Went Nowhere</a></h2>
+      <p class="entry-excerpt">A placeholder for a life essay or reflection. Send me the actual piece and I'll drop it in here with your real words.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Bazaar</a></h2>
+      <p class="entry-excerpt">Naxal ka laal bikta hai,
+nashediyon ka maal bhi.
+
+Dihadi ka haq bikta hai,
+vidvaan ke vichaar bhi.
+
+Sansad ki seat bikti hai,
+gunegaar ka case bhi.
+
+Ye duniya nahi—
+bazaar hai.
+
+Yahan sab kuch bikta hai…
+
+Aur kabhi kabhi,
+insaan bhi.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">When the Time Comes</a></h2>
+      <p class="entry-excerpt">When she dances in the rain and the clouds say hi
+When she rolls her eyes and the winds change
+When she makes my daisies bloom in an autumn night
+When she stretched her arms and the lightning strikes
+
+When that time comes, let me know</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Mannat</a></h2>
+      <p class="entry-excerpt">Main mandir mein mannat maangta raha,
+aur tum mili mujhe church ke samne.
+
+Kya pata,
+upar sab ek saath hai.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Buddu Shayar</a></h2>
+      <p class="entry-excerpt">Ek shayar ko pyaar ho gaya,
+aur shayari karne ki chaah bhi.
+
+Kabhi unko phool kehke pukara,
+kabhi unhe chaand.
+
+Kabhi unko mor kehke pukara,
+kabhi Noor.
+
+Devi mooh latka gayi,
+aur uljhan si lagi.
+
+Phir koi aakar bola—
+"Pehle unka naam lekar toh dekho."</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Shukr Hai</a></h2>
+      <p class="entry-excerpt">Shukr hai, main shayar nahi hoon,
+warna teri tareefon mein
+200 panne ki kitaab bhi kam pad jaati.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Bhoot</a></h2>
+      <p class="entry-excerpt">Ek bin bulaya bhoot aa jaaye—
+Naxalbari ka laal khajaye,
+nashediyon ka maal khajaye.
+
+Gareebon ki bhookh khajaye,
+kisano ka karz khajaye.
+
+Chatron ki berozgaari khajaye,
+netaaon ki lootmaar khajaye.
+
+Betiyon par atyachaar khajaye,
+aatank ke hathiyaar khajaye.
+
+Kaash—
+aisa ek din aa jaaye.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Illusion of Letting Go</a></h2>
+      <p class="entry-excerpt">If letting go is a choice between—
+a rebellion against indifference,
+a voyage through swirling tides,
+the temptation of a costly pride,
+or an illusion pulling me away…
+
+I still brace my heart
+against it.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">The Choice is You</a></h2>
+      <p class="entry-excerpt">If love is a daily choice between a rebellion against indifference, a touch of utmost pleasure, a volcanic eruption of flowers, and a lost treasure of ultimate solace.
+I still choose you, again and again.</p>
+    </article>
+
+    <article class="entry poetry" data-tag="poetry">
+      <div class="entry-meta"><span class="tag">Poetry</span></div>
+      <h2 class="entry-title"><a href="#">Magical Memoir</a></h2>
+      <p class="entry-excerpt">Enchanted by You
+
+You are the girl who can challenge a thousand butterflies.
+You are the light that heals the darkest sorrows.
+You are the spell to wake the magical forest.
+You are the only peace that echoes in eternity.
+
+You are the angel without wings, and I'm enchanted by you.
+
+⸻
+
+Spellbound
+
+Hand in hand, we slid across the rainbow,
+Time stood still as we danced in the moonlight.
+Challenged the wind, riding on a unicorn,
+Slept in a treehouse lit by countless fireflies.
+
+Loving her in this endless spell.
+
+⸻
+
+After the Magic
+
+The rainbow fades, and the winds turn cold.
+The moonlight no longer lights the path.
+The treehouse stands, but the fireflies are gone,
+And the unicorn, now a mere shadow in my mind.
+
+I still carry the echoes of her magic, but the spell is broken.
+
+Author's Note:
+An echo of love, told through the fading light of magic.</p>
+    </article>
+
+    <article class="entry" data-tag="stories">
+      <div class="entry-meta"><span class="tag">Stories</span> · Sample entry</div>
+      <h2 class="entry-title"><a href="#">The Long Way Home</a></h2>
+      <p class="entry-excerpt">A placeholder short story entry. Once you share a draft, this becomes the opening lines or a proper excerpt.</p>
+    </article>
+
+    <article class="entry" data-tag="opinions">
+      <div class="entry-meta"><span class="tag">Opinions</span> · Sample entry</div>
+      <h2 class="entry-title"><a href="#">Why I Think We Got This Wrong</a></h2>
+      <p class="entry-excerpt">A placeholder for an opinion piece. Send the real take and I'll swap this in.</p>
+    </article>
+
+  </main>
+
+  <footer class="site">
+    Field Notes — a personal collection. Send new pieces anytime to add them.
+  </footer>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('#filters button');
+  const entries = document.querySelectorAll('.entry');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+      entries.forEach(entry => {
+        entry.style.display = (tag === 'all' || entry.dataset.tag === tag) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
